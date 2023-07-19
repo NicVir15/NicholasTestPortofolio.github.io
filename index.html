@@ -27,6 +27,7 @@
         text-decoration: none;
         justify-content: center;
         align-items: center;
+        margin-bottom: 30px;
       }
       .itemBarCenter {
         display: flex;
@@ -265,6 +266,77 @@
         font-size: 12px;
         font-weight: 500;
       }
+      .parent {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 32px;
+        grid-row-gap: 13px;
+        padding-top: 40px;
+      }
+
+      .div2 {
+        grid-area: 1 / 4 / 2 / 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div3 {
+        grid-area: 2 / 4 / 3 / 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div4 {
+        grid-area: 3 / 4 / 4 / 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div1 {
+        grid-area: 1 / 2 / 4 / 4;
+        margin-top: 25px;
+      }
+      .parent1 {
+        display: grid;
+        grid-template-columns: repeat(5, 0.3fr);
+        grid-template-rows: repeat(4, 0.6fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+        background-color: #000000;
+      }
+
+      .div11 {
+        grid-area: 3 / 1 / 4 / 2;
+        margin-left: 60px;
+      }
+      .div22 {
+        grid-area: 3 / 3 / 4 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div33 {
+        grid-area: 3 / 4 / 4 / 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div44 {
+        grid-area: 3 / 5 / 4 / 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .footerText {
+        color: #ffffff;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      .descripFont {
+        font-size: 12px;
+        font-weight: 500px;
+      }
     </style>
   </head>
   <body>
@@ -342,6 +414,7 @@
         <p style="color: white; margin-right: 4%">UI/UX</p>
       </div>
     </div>
+
     <div>
       <div style="display: block; justify-content: center">
         <div>
@@ -349,46 +422,66 @@
           <p class="CenterPosition">Here are the services we are providing you.</p>
         </div>
         <div class="grid-container">
-          <div>
-            <img src="./ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          <div >
+            <img src="./ri_pages-fill.png" alt="Icon1" width="30px" height="32px"/>
+            <p style="font-size: 12px; font-weight: 500">React-native</p>
           </div>
           <div>
             <img src="./ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
-          </div>
-          <div>
-            <img src="./asset/ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+            <p style="font-size: 12px; font-weight: 500">SQL</p>
           </div>
           <div>
             <img src="./ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+            <p style="font-size: 12px; font-weight: 500">Javascript</p>
           </div>
           <div>
             <img src="./ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+            <p style="font-size: 12px; font-weight: 500">HTML</p>
           </div>
           <div>
             <img src="./ri_pages-fill.png" alt="Icon1" />
-            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+            <p style="font-size: 12px; font-weight: 500">CSS</p>
+          </div>
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 12px; font-weight: 500">UI/UX</p>
           </div>
         </div>
       </div>
     </div>
-    <div style="margin-top: 50px">
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+      <div class="parent">
+        <div class="div1">
+          <h1 style="margin-bottom: 10px">My Experience</h1>
+          <div style="padding-left: 20px">
+            <p class="descripFont">I am not very active in university organizations, but since the beginning of entering college in 2019 - 2023 I have been active as a part-time worker in the BINUS University promotion team.</p>
+            <p class="descripFont">Then to support my UI/UX skills which I have trained for 2 years of experience, I worked as a UI/UX Design intern at PT. Surya Citra Media, Tbk.</p>
+            <p class="descripFont">Continuing to hone programming skills, I underwent an internship as a Mobile Front-end Developer at PT. Maybank Finance Indonesia.</p>
+          </div>
+        </div>
+        <div class="div2">
+          <img src="./BinusUniIcon.png" alt="BINUSIcon" width="150px" />
+        </div>
+        <div class="div3">
+          <img src="./SCMIcon.png" alt="SCMIcon" width="150px" />
+        </div>
+        <div class="div4">
+          <img src="./MaybankFiIcon.png" alt="MaybankIcon" width="100px" />
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 50px;">
       <h2 class="CenterPosition">Portofolio Project</h2>
       <p class="CenterPosition">Here are the services we are providing you.</p>
     </div>
     <div class="barCenter2">
-      <div style="margin-left: 20px">
+      <div>
         <div class="containerCard1">
           <div class="card2">
             <div class="title1">
               <img src="./Group.png" alt="FigmaIcons" style="width: 30px" class="title2" />
               <p>UI/UX Design</p>
             </div>
-
             <div class="card-hidden1">
               <p class="title-in1">UI/UX Design</p>
               <p class="fontCard1">We provide stunning designs for your UI/UX project, we can handle any project related to landing page designs, portofolio website designs, business websites, and many more as per your requirements.</p>
@@ -450,5 +543,27 @@
         </div>
       </div>
     </div>
+    
+    <footer>
+      <div>
+        <div class="parent1">
+          <div class="div11">
+            <img src="./icons_footer.png" alt="WebIcon" width="110px" />
+          </div>
+          <div class="div22">
+            <img src="./Frame 39.png" alt="WhatsappsIcon" width="30px" height="30px" />
+            <p class="footerText">+62-812-8218-4540</p>
+          </div>
+          <div class="div33">
+            <img src="./GmailIcons.png" alt="GmailIcons" width="30px" height="30px" />
+            <p class="footerText">Nicholasjunerobung45@gmail.com</p>
+          </div>
+          <div class="div44">
+            <img src="./LinkedInIcon.png" alt="LinkedinIcons" width="30px" height="30px" />
+            <p class="footerText">nicnicholas</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
