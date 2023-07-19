@@ -1,61 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nicholas.Portofolio</title>
+    <style>
+      html {
+        font-family: 'Lucida Sans', sans-serif;
+        background-color: rgba(0, 0, 0, 0.07);
+      }
+      ul {
+        list-style-type: none;
+        margin: 5px;
+        padding: 10px;
+        overflow: hidden;
+        background-color: none;
+      }
+      .barCenter {
+        margin: 5px;
+        background-color: black;
+      }
+      .barCenter2 {
+        margin: 5px;
+        background-color: transparent;
+        display: flex;
+        color: black;
+        text-align: center;
+        padding: 40px 10px 10px 10px;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+      }
+      .itemBarCenter {
+        display: flex;
+        color: black;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        float: right;
+      }
+
+      li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: none;
+      }
+      button {
+        font-size: 15px;
+        border: transparent;
+        background: #fbe883;
+        color: white;
+        border-radius: 4px;
+        display: block;
+        text-align: center;
+        padding: 12px 18px;
+        text-decoration: none;
+      }
+
+      button:hover {
+        background: rgb(2, 0, 36);
+      }
+
+      button:active {
+        transform: translate(0em, 0.2em);
+      }
+      .item1 {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .card1 {
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px 5px 30px;
+        gap: 5px;
+      }
+
+      /* for all social containers*/
+      .socialContainer {
+        width: fit-content;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+      .containerASK {
+        width: fit-content;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+      .button1 {
+        font-size: 15px;
+        border: transparent;
+        background: #fbe883;
+        color: white;
+        border-radius: 4px;
+        display: block;
+        text-align: center;
+        padding: 10.5px 17px;
+        text-decoration: none;
+      }
+      .home-content-wrap {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        margin-left: 5%;
+      }
+      .w-layout-grid {
+        grid-row-gap: 16px;
+        grid-column-gap: 16px;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        display: grid;
+      }
+      .home-section-wrap {
+        margin-bottom: 30px;
+      }
+      .section-heading {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+      .CenterPosition {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 15px;
+        background-color: transparent;
+        padding: 5px 5px 5px 5px;
+        margin-left: 30px;
+      }
+
+      .grid-container > div {
+        background-color: #bdbdbd;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        width: 230px;
+        border-radius: 10px;
+      }
+
+      .containerCard1 {
+        position: relative;
+        width: 190px;
+        height: 260px;
+      }
+
+      .card2 {
+        position: relative;
+        width: 180px;
+        height: 240px;
+        background: linear-gradient(406deg, #ffffff, #fbe883, #ffe559, #ffde2c);
+        background-size: 200% 100%;
+
+        -webkit-animation: AnimationName 1s ease infinite;
+        -moz-animation: AnimationName 1s ease infinite;
+        animation: AnimationName 1s ease infinite;
+        border-radius: 8px;
+        color: #232323;
+        padding: 14px;
+        border: 1px solid #232323;
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+      }
+
+      .card-hidden1 {
+        display: flex;
+        transform: translateY(200%);
+        flex-direction: column;
+
+        transition: transform 0.5s ease-in, opacity 0.3s ease-in;
+        opacity: 0;
+      }
+
+      .card-border1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 15px;
+        top: 0;
+        border: 1px dashed #232323;
+        border-radius: 8px;
+        z-index: -1;
+      }
+
+      /*Hovers*/
+      .card2:hover {
+        transform: translate(-15px, -15px);
+        border-color: #fbe883;
+      }
+
+      .card2:hover .card-hidden1 {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .card2:hover .title1 {
+        transform: translateY(250%);
+      }
+      .card2:hover .title2 {
+        transform: translateY(250%);
+      }
+
+      /*Text*/
+      .title1 {
+        position: absolute;
+        bottom: 1.6rem;
+
+        font-weight: 700;
+        font-size: 1rem;
+        transition: transform 0.25s ease-out;
+      }
+      .title2 {
+        position: absolute;
+        bottom: 3rem;
+        right: 4.3rem;
+        transition: transform 0.25s ease-out;
+      }
+
+      .title-in1 {
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      /*Button*/
+      .button2 {
+        display: inline-flex;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 24px;
+        font-weight: 600;
+        font-size: small;
+        background-color: #fbe883;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button2:hover {
+        background-color: #fbe883;
+      }
+      .fontCard1 {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    </style>
   </head>
-  <body style="background-color: rgba(0, 0, 0, 0.05)">
-    <div style="display: flex; justify-items: center; justify-content: space-between">
-      <div>
-        <img src="./Nic.Port.png" alt="WebLogo" style="margin: 20px; display: flex; justify-content: flex-start" />
-      </div>
-      <div style="display: flex; justify-content: center; margin: 20px">
-        <div style="margin-left: 10px"><p>Home</p></div>
-        <div style="margin-left: 10px"><p>Services</p></div>
-        <div style="margin-left: 10px"><p>Portofolio</p></div>
-      </div>
-      <div style="display: flex; justify-content: center; justify-items: center; background-color: #fbe883; padding-top: 5px; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; margin: 20px; border-radius: 8px">
-        <p style="color: white">Download CV</p>
-      </div>
-    </div>
-    <div style="display: flex; justify-items: center; justify-content: space-between; padding-left: 50px; padding-right: 150px">
-      <div>
-        <div style="padding-top: 30px">
-          <h1>HI, I’M NICHOLAS</h1>
-          <h1>A CREATIVE UI / UX DESIGNER</h1>
-          <h1>AND DEVELOPER.</h1>
-        </div>
-        <div>
-          <div style="display: flex; justify-content: space-between; justify-items: center; align-items: center; width: fit-content">
-            <div style="display: flex; justify-items: center; align-items: center">
+  <body>
+    <ul>
+      <li>
+        <button>Download CV</button>
+      </li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Services</a></li>
+      <li><a href="">Portofolio</a></li>
+      <li style="float: left">
+        <img src="./Nic.Port.png" alt="WebLogo" />
+      </li>
+    </ul>
+
+    <div class="home-content-wrap">
+      <div class="w-layout-grid">
+        <div class="home-content-wrap">
+          <div>
+            <h2 class="section-heading">HI, I’M NICHOLAS</h2>
+            <h2 class="section-heading">A CREATIVE UI / UX DESIGNER</h2>
+            <h2 class="section-heading">AND DEVELOPER.</h2>
+          </div>
+          <div class="card1">
+            <div class="item1 socialContainer">
               <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
-              <p>Developer</p>
+              <p>HTML</p>
             </div>
-            <div style="display: flex; justify-items: center; align-items: center">
+            <div class="item1 socialContainer">
               <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
               <p>React-Native</p>
             </div>
-            <div style="display: flex; justify-items: center; align-items: center">
+            <div class="item1 socialContainer">
+              <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
+              <p>CSS</p>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="item1 socialContainer">
+              <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
+              <p>Javascript</p>
+            </div>
+            <div class="item1 socialContainer">
               <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
               <p>UI/UX</p>
             </div>
           </div>
-          <div style="display: flex; justify-content: space-between; justify-items: center; align-items: center; width: fit-content">
-            <div style="display: flex; justify-items: center; align-items: center">
-              <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
-              <p>HTML</p>
-            </div>
-            <div style="display: flex; justify-items: center; align-items: center">
-              <svg height="30" width="30"><ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" /></svg>
-              <p>Javascript</p>
-            </div>
+          <div class="containerASK">
+            <p>Want to discuss?</p>
+
+            <div class="button1" style="margin-left: 10px">Let's Talk</div>
+          </div>
+        </div>
+        <img src="./ProfilePicture.png" alt="ProfilePicture" />
+      </div>
+    </div>
+    <div class="barCenter">
+      <div class="itemBarCenter">
+        <svg height="30" width="30">
+          <ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" />
+        </svg>
+        <p style="color: white; margin-right: 4%">Mobile Apps Design</p>
+
+        <svg height="30" width="30">
+          <ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" />
+        </svg>
+        <p style="color: white; margin-right: 4%">Web Design</p>
+        <svg height="30" width="30">
+          <ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" />
+        </svg>
+        <p style="color: white; margin-right: 4%">React-Native</p>
+        <svg height="30" width="30">
+          <ellipse cx="15" cy="15" rx="10" ry="10" style="fill: #fbe883" />
+        </svg>
+        <p style="color: white; margin-right: 4%">UI/UX</p>
+      </div>
+    </div>
+    <div>
+      <div style="display: block; justify-content: center">
+        <div>
+          <h2 class="CenterPosition">Progamming languages</h2>
+          <p class="CenterPosition">Here are the services we are providing you.</p>
+        </div>
+        <div class="grid-container">
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          </div>
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          </div>
+          <div>
+            <img src="./asset/ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          </div>
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          </div>
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
+          </div>
+          <div>
+            <img src="./ri_pages-fill.png" alt="Icon1" />
+            <p style="font-size: 14px; font-weight: 600">Web Development</p>
           </div>
         </div>
       </div>
-      <div>
-        <img src="./ProfilePicture.png" alt="ProfilePicture" />
+    </div>
+    <div style="margin-top: 50px">
+      <h2 class="CenterPosition">Portofolio Project</h2>
+      <p class="CenterPosition">Here are the services we are providing you.</p>
+    </div>
+    <div class="barCenter2">
+      <div style="margin-left: 20px">
+        <div class="containerCard1">
+          <div class="card2">
+            <div class="title1">
+              <img src="./Group.png" alt="FigmaIcons" style="width: 30px" class="title2" />
+              <p>UI/UX Design</p>
+            </div>
+
+            <div class="card-hidden1">
+              <p class="title-in1">UI/UX Design</p>
+              <p class="fontCard1">We provide stunning designs for your UI/UX project, we can handle any project related to landing page designs, portofolio website designs, business websites, and many more as per your requirements.</p>
+              <a class="button2">See Details</a>
+            </div>
+          </div>
+          <div class="card-border1"></div>
+        </div>
+      </div>
+      <div style="margin-left: 60px">
+        <div class="containerCard1">
+          <div class="card2">
+            <div class="title1">
+              <img src="./uiw_mobile.png" alt="FigmaIcons" style="width: 40px; margin-right: 3.3rem" class="title2" />
+              <p>Mobile Development</p>
+            </div>
+
+            <div class="card-hidden1">
+              <p class="title-in1">Mobile Development</p>
+              <p class="fontCard1">We provide stunning designs for your UI/UX project, we can handle any project related to landing page designs, portofolio website designs, business websites, and many more as per your requirements.</p>
+              <a class="button2">See Details</a>
+            </div>
+          </div>
+          <div class="card-border1"></div>
+        </div>
+      </div>
+      <div style="margin-left: 60px">
+        <div class="containerCard1">
+          <div class="card2">
+            <div class="title1">
+              <img src="./ph_code-bold.png" alt="FigmaIcons" style="width: 40px; margin-right: 2rem" class="title2" />
+              <p>Web Development</p>
+            </div>
+
+            <div class="card-hidden1">
+              <p class="title-in1">Web Development</p>
+              <p class="fontCard1">We provide stunning designs for your UI/UX project, we can handle any project related to landing page designs, portofolio website designs, business websites, and many more as per your requirements.</p>
+              <a class="button2">See Details</a>
+            </div>
+          </div>
+          <div class="card-border1"></div>
+        </div>
+      </div>
+      <div style="margin-left: 60px">
+        <div class="containerCard1">
+          <div class="card2">
+            <div class="title1">
+              <img src="./Group.png" alt="FigmaIcons" style="width: 30px" class="title2" />
+              <p>UI/UX Design</p>
+            </div>
+
+            <div class="card-hidden1">
+              <p class="title-in1">UI/UX Design</p>
+              <p class="fontCard1">We provide stunning designs for your UI/UX project, we can handle any project related to landing page designs, portofolio website designs, business websites, and many more as per your requirements.</p>
+              <a class="button2">See Details</a>
+            </div>
+          </div>
+          <div class="card-border1"></div>
+        </div>
       </div>
     </div>
   </body>
